@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,18 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Bitlinks - Your trusted URL shortener",
-  description: "Bitlinks helps you shorten your Urls easily",
+  title: "sanjeev9cs - Your trusted URL shortener",
+  description: "sanjeev9cs helps you shorten your Urls easily",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purple-50`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-purple-50 min-h-screen flex flex-col`}
       >
         <Navbar />
-        {children}
+
+        <main className="flex-1">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
